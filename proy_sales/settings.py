@@ -89,8 +89,8 @@ WSGI_APPLICATION = 'proy_sales.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        # Replace this value with your local database's connection string.
-        default='postgresql://postgres:postgres@localhost:5432/proy_sales',
+        # Use environment variable for the connection string
+        default=os.getenv('DATABASE_URL', 'postgresql://postgres:postgres@localhost:5432/proy_sales'),
         conn_max_age=600
     )
 }
