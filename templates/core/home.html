@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block icono %}
+    <link rel="icon" href="https://cdn.icon-icons.com/icons2/1744/PNG/512/3643769-building-home-house-main-menu-start_113416.png">
+{% endblock %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>IMPULSA TU NEGOCIO CON NUESTRO SISTEMA</h1>
+    <p class="description">Nuestro sistema innovador ofrece las herramientas necesarias para maximizar el potencial de tu negocio.</p>
+
+    <div class="cards">
+        <div class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/2654/2654594.png" alt="Optimizar tus operaciones">
+            <h3>OPTIMIZAR TUS OPERACIONES</h3>
+            <p>Aumenta la eficiencia de tu equipo con herramientas automatizadas y análisis detallados.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://img.freepik.com/vector-premium/aumentar-ventas-icono-porcentaje-costo-crecimiento-aumento-fondo-mutuo-aumento-rapido-negocio-beneficio-economico-grafico-financiero-inversion-devolucion-dinero-simbolo-linea-delgada-trazo-editable-vector-ilustracion_775815-330.jpg" alt="Aumentar tus ventas">
+            <h3>AUMENTAR TUS VENTAS</h3>
+            <p>Realiza ventas identificando nuevas oportunidades de negocio y cerrando más acuerdos.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/2846/2846182.png" alt="Gestionar tus finanzas">
+            <h3>GESTIONAR TUS FINANZAS</h3>
+            <p>Administra tus finanzas de manera eficiente y toma decisiones informadas con análisis financieros detallados sobre los productos.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/4477/4477480.png" alt="Mejorar la satisfacción del cliente">
+            <h3>MEJORAR LA SATISFACCIÓN DEL CLIENTE</h3>
+            <p>El cliente recibe un servicio personalizado y una experiencia que garantiza su satisfacción.</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="slider-frame">
+    <ul>
+        <li><img src="./../media/logo4.jpeg" alt="" width="350" height="600"></li>
+        <li><img src="../../media/logo1.jpeg" alt="" width="350" height="600"></li>
+        <li><img src="../../media/logo2.jpeg" alt="" width="350" height="600"></li>
+        <li><img src="../../media/logo3.jpeg" alt="" width="350" height="600"></li>
+    </ul>
+</div>
+
+<div class="super_wrapper">
+    <div class="title_">
+        <h2>Personas que colaboraron...</h2>
+    </div>
+    <div class="wrapper">
+        <i id="left" class="fa-solid fa-angle-left"></i>
+        <ul class="carousel">
+            <li class="card_">
+                <div class="img"><img src="../media/william.jpeg" alt="img" draggable="false"></div>
+                <h2>William García</h2>
+                <span>Desarrollador Backend</span>
+            </li>
+    
+            <li class="card_">
+                <div class="img"><img src="../media/cesar.jpeg" alt="img" draggable="false"></div>
+                <h2>César Miño</h2>
+                <span>Analista de datos</span>
+            </li>
+            
+            <li class="card_">
+                <div class="img"><img src="../media/cuadrado.jpeg" alt="img" draggable="false"></div>
+                <h2>Jeremy Cuadrado</h2>
+                <span>Desarrollador Frontend</span>
+            </li>
+    
+            <li class="card_">
+                <div class="img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHxfQngetVd93-f-8nvtBrZu9PmiepZYfofg&s" alt="img" draggable="false"></div>
+                <h2>Bulma</h2>
+                <span>Ing. informática</span>
+            </li>
+    
+            <li class="card_">
+                <div class="img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlJieLB5Y5kMInmXEBmqgnvnMKK7YGzTvRYQ&s" alt="img" draggable="false"></div>
+                <h2>Trunks del futuro</h2>
+                <span>Desarrollador Fullstack</span>
+            </li>
+    
+            <li class="card_">
+                <div class="img"><img src="https://e.rpp-noticias.io/xlarge/2022/03/03/111011_1225714.jpg" alt="img" draggable="false"></div>
+                <h2>Dr. Gero</h2>
+                <span>Ing. en robótica</span>
+            </li>
+        </ul>
+        <i id="right" class="fa-solid fa-angle-right"></i>
+    </div>
+</div>
+
+{% endblock content  %}

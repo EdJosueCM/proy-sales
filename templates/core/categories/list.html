@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block icono %}
+    <link rel="icon" href="https://cdn.icon-icons.com/icons2/3403/PNG/512/category_icon_215567.png">
+{% endblock %}
+
+{% block title %}
+    Lista de categorías
+{% endblock %}
+
+{% block content %}
+<div class="table-container">
+    <br>
+    <h1 class="title">{{ title2 }}</h1>
+    <table class="styled-table">
+        <thead class="texto_tabla">
+            <tr>
+                <th>Descripcion</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody class="texto_tabla">
+        {% for item in categories %}
+            <tr>
+                <td>{{item.description}}</td>
+                <td>{% if item.state %}
+                    ✔
+                    {% else %}
+                    ➖
+                    {% endif %}
+                </td>
+                <td>
+                    <a href={% url 'core:category_update' item.id %}>✏️</a>
+                    <a href={% url 'core:category_delete' item.id %}>❌</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    
+    <div class="form-group botones">
+        <button class="boton tres verde" onclick="window.location.href='{% url 'core:category_create' %}' "><span>Nueva categoria</span></button>
+    </div>
+</div>
+{% endblock content  %}

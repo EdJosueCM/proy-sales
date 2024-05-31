@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block icono %}
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4237/4237554.png">
+{% endblock %}
+
+{% block title %}
+    Proveedores - Formulario
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="form-container">
+        <h2 class="title">{{title2}}</h2>
+    
+        <form method="post" enctype="multipart/form-data" onsubmit="validarFormulario(event)">
+            {% csrf_token %}
+            {% comment %} {{ form.as_p }} {% endcomment %}
+            {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+            </div>
+            {% endfor %}
+            <div class="form-group botones">
+                <button class="boton tres verde"><span>Guardar</span></button>
+                <button class="boton tres rojo" onclick="window.location.href='{% url 'core:supplier_list' %}' "><span>Cancelar</span></button>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="{% static 'js/validaciones.js' %}"></script>
+{% endblock content  %}

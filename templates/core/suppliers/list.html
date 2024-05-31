@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block icono %}
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4237/4237554.png">
+{% endblock %}
+
+{% block title %}
+    Lista de proveedores
+{% endblock %}
+
+{% block content %}
+<div class="table-container">
+    <br>
+    <h1 class="title">{{ title2 }}</h1>
+    <table class="styled-table">
+    	<thead class="texto_tabla">
+			<tr>
+				<th>Nombre</th>
+				<th>Ruc</th>
+				<th>Direccion</th>
+				<th>Telefono</th>
+				<th>Estado</th>
+				<th>Acciones</th>
+			</tr>
+    	</thead>
+
+    	<tbody class="texto_tabla">
+		{% for item in supplier %}
+			<tr>
+				<td>{{item.name}}</td>
+				<td>{{item.ruc}}</td>
+				<td>{{item.address}}</td>
+				<td>{{item.phone}}</td>
+				<td>{% if item.state %}
+					✅
+					{% else %}
+					➖
+					{% endif %}
+				</td>
+				<td>
+					<a href={% url 'core:supplier_update' item.id %}>✏️</a>
+					<a href={% url 'core:supplier_delete' item.id %}>❌</a>
+				</td>
+			</tr>
+		{% endfor %}
+    	</tbody>
+    </table>
+    
+    <div class="form-group botones">
+		<button onclick="window.location.href='{% url 'core:supplier_create' %}' " class="boton tres verde"><span>Nuevo proveedor</span></button>
+    </div>
+</div>
+{% endblock content  %}

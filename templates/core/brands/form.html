@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block icono %}
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYZL4ifCkVXKUfa9lynO_y1okJjunHkGsMRw&s">
+{% endblock %}
+
+{% block title %}
+    Marcas - Formulario
+{% endblock %}
+
+{% block content %}
+ <div class="container">
+    <div class="form-container">
+        <h2 class="title">{{title2}}</h2>
+    
+        <form method="post" enctype="multipart/form-data" >
+            {% csrf_token %}
+            {% comment %} {{ form.as_p }} {% endcomment %}
+            {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+            </div>
+            {% endfor %}
+            <div class="form-group botones">
+                <button class="boton tres verde"><span>Guardar</span></button>
+                <button class="boton tres rojo" onclick='window.location.href='{% url 'core:brand_list' %}' '><span>Cancelar</span></button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content  %}

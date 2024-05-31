@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block icono %}
+    <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/006/445/972/non_2x/wish-list-black-glyph-icon-products-customers-planning-to-buy-online-shopping-website-interface-and-features-silhouette-symbol-on-white-space-solid-pictogram-isolated-illustration-vector.jpg">
+{% endblock %}
+
+{% block title %}
+    Productos - Formulario
+{% endblock %}
+
+{% block content %}
+ <div class="container">
+  <div class="form-container">
+    <h2 class="title">{{title2}}</h2>
+   
+    <form method="post" enctype="multipart/form-data" >
+        {% csrf_token %}
+        {% comment %} {{ form.as_p }} {% endcomment %}
+        {% for field in form %}
+        <div class="form-group">
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field }}
+        </div>
+        {% endfor %}
+        <div class="form-group botones">
+            <button class="boton tres verde"><span>Guardar</span></button>
+            <button class="boton tres rojo" onclick="window.location.href='{% url 'core:product_list' %}' "><span>Cancelar</span></button>
+        </div>
+    </form>
+</div>
+</div>
+{% endblock content  %}

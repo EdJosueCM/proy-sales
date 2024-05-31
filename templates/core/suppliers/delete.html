@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block icono %}
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4237/4237554.png">
+{% endblock %}
+
+{% block title %}
+    Proveedores - Eliminar
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="form-container">
+        <form class="form-container" method="POST">
+            {% csrf_token %}
+            <h1 class="title">{{ title2 }}</h1>
+            <h2>¿Desea Eliminar el proveedor?<span>{{ supplier.id }} - {{ supplier.description }}</span></h2>
+            <div class="botones">
+                <button class="boton tres verde"><span>Eliminar</span></button>
+                <button class="boton tres rojo" onclick="window.location.href='{% url 'core:supplier_list' %}' "><span>Regresar</span></button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}

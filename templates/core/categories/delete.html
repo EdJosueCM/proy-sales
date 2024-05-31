@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block icono %}
+    <link rel="icon" href="https://cdn.icon-icons.com/icons2/3403/PNG/512/category_icon_215567.png">
+{% endblock %}
+
+
+{% block title %}
+    Categorias - Eliminar
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="form-container">
+        <form class="form-container" method="POST">
+            {% csrf_token %}
+            <h1 class="title">{{ title2 }}</h1>
+            <h2>¿Desea Eliminar la Categoria?<span>{{ category.id }} - {{ category.description }}</span></h2>
+            <div class="botones">
+                <button class="boton tres verde"><span>Eliminar</span></button>
+                <button class="boton tres rojo" onclick="window.location.href='{% url 'core:category_list' %}' "><span>Regresar</span></button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}
